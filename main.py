@@ -1,18 +1,13 @@
-from models.parametros import parametros
-import psycopg2
+from mid.comandos import mid
+from uppay.conexao import conectaUppay 
 
-class main:
-    
-    def __init__(self) -> None:
-        pass
-    
-    def teste(self):
-        conn = psycopg2.connect(
-            host="35.247.217.164",
-            database="grancoffee",
-            user="postgres",
-            password="VnBgPQbYzwa95VDm")
-        
+def mn():
+   
+   commands = mid() 
+   id = commands.getUltimoID()
+   if(id!=None):
+    cn = conectaUppay()
+    cn.connect(str(id))   
+    print(id)
 
-a = main()
-a.teste()
+mn()
