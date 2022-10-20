@@ -6,6 +6,7 @@ class conectaUppay:
     def connect(self, id):
     
         conn = None
+        vendas = None
         
         try:
             
@@ -15,8 +16,10 @@ class conectaUppay:
             cur.execute('select * from gc_vends gv where id >'+id)
             vendas = cur.fetchall()
             
-            for v in vendas:
-                print(v)
+            #for v in vendas:
+            #    print(v)
+            
+            cur.close()
 
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
@@ -24,7 +27,7 @@ class conectaUppay:
             if conn is not None:
                 conn.close()
                 print('Database connection closed.')
-
+        return vendas
 
 #if __name__ == '__main__':
 #a = conectaUppay()
