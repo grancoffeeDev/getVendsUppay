@@ -38,7 +38,7 @@ class util:
         df['dt_get'] = dtget
         j2l = df.to_json(orient='records', lines=True)
         #print(j2l)
-        return j2l
+        return j2l            
     
     def maxID(self,data):
         df = None

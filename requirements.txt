@@ -1,0 +1,7 @@
+pandas
+psycopg2
+ConfigParser
+requests
+uuid
+google_cloud_storage
+functions_framework
