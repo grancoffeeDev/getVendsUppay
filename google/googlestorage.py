@@ -1,5 +1,6 @@
 import os
 from google.cloud import storage
+import uuid
 
 #https://www.youtube.com/watch?v=1cDqRrw3t9o&ab_channel=JieJenn
 #https://googleapis.dev/python/storage/latest/blobs.html#google.cloud.storage.blob.Blob.upload_from_string
@@ -39,7 +40,7 @@ class GCStorage:
         else:
             bucket_gcs = gcs.get_bucket(bucket_name)
         
-        blob = bucket_gcs.blob('venda.json') 
+        blob = bucket_gcs.blob(str(uuid.uuid4())+'.json') 
         blob.upload_from_string(json_object, content_type='application/json')      
         
 #GCS instance
