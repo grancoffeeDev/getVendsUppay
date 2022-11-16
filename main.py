@@ -27,6 +27,9 @@ def mn(cloud_event=None):
     gcs = GCStorage(str(id))
     gcs.enviaDados(vendasL)
     
+    #save in MID
+    commands.salvaVendasMID(v)
+    
     return
 
 #mn()

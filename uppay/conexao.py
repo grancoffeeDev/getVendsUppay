@@ -29,11 +29,11 @@ class conectaUppay:
             conn = psycopg2.connect(**params)
             cur = conn.cursor(cursor_factory=RealDictCursor)
             cur.execute('select '+
-                'id as iditem, '+
+                'id as id_item, '+
                 'dt_mov, '+
                 'coalesce(sankhya_id,\'VAZIO\') as codbem, '+
-                'tecla, '+
-                'codprod, '+
+                'tecla::varchar, '+
+                'coalesce(codprod,\'0\') as codprod, '+
                 '2 as id_telemetria, '+
                 'id_mov, '+
                 'qtd as quantidade, '+
