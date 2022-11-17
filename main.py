@@ -22,6 +22,7 @@ def mn(cloud_event=None):
     #convert json to jsonl
     u = util()
     vendasL = u.json2jsonl(v)
+    print(v[0])
     
     #save in google storage
     gcs = GCStorage(str(id))

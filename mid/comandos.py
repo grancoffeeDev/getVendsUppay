@@ -11,7 +11,7 @@ class mid:
         url = "http://api.grancoffee.com.br:8000/mid/gc_config?id=eq.1"
         payload={}
         response = requests.request("GET", url, headers=self.token, data=payload)
-        id = response.json()[0]['last_vendid']
+        id = response.json()[0]['last_vendid_teste']
         return id
     
     def salvaVendasMID(self, vendas):
