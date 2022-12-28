@@ -10,8 +10,9 @@ def mn(cloud_event=None):
    
    #get the last vend id in MID
    commands = mid() 
-   id = commands.getUltimoID()
-   print(id)
+   #id = commands.getUltimoID()
+   #print(id)
+   id = 3740365
    
    if(id!=None):
     #get the new vends in uppay   
@@ -22,15 +23,16 @@ def mn(cloud_event=None):
     #convert json to jsonl
     u = util()
     vendasL = u.json2jsonl(v)
-    print(v[0])
+    for x in v:
+        print(x)
     
     #save in google storage
-    gcs = GCStorage(str(id))
-    gcs.enviaDados(vendasL)
+    #gcs = GCStorage(str(id))
+    #gcs.enviaDados(vendasL)
     
     #save in MID
-    commands.salvaVendasMID(v)
+    #commands.salvaVendasMID(v)
     
     return
 
-#mn()
+mn()

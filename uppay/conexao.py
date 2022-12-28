@@ -63,7 +63,7 @@ class conectaUppay:
                 'cardnumber, '+
                 'qrcode '
                 'from gc_vends gv where id >'+id+
-                ' order by id')
+                ' and id < 3740429 order by id')
             vendas = json.dumps(cur.fetchall(),indent=4, default=conectaUppay.json_serial)
             
             if(vendas!=None):
